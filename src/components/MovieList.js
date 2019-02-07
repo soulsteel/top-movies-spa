@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react";
 
 import MovieTitle from "./MovieTitle";
+import Loader from "./Loader";
 
 function MovieList() {
-  const [title, setTitle] = useState(null);
-  const [moviesData, setMoviesData] = useState(null);
+
+  const [moviesData, setMoviesData] = useState([]);
   
   useEffect( function getTopMoviesData() {
     const URL = "https://cors-anywhere.herokuapp.com/https://rss.itunes.apple.com/api/v1/us/movies/top-movies/all/25/non-explicit.json";
     fetch(URL)
     .then(res => res.json())
-    .then(json=> setMoviesData(json.feed.results))
-  });
+    .then(json=> setMoviesData(json.feed.results));
+  }, []);
+
+  if(moviesData.length === 0) {
+    return <Loader />
+  }
 
   return (
-    <MovieTitle 
-      title="Bohemian Rhapsody" 
-      imgSrc="https://is4-ssl.mzstatic.com/image/thumb/Video124/v4/5d/f3/b8/5df3b823-1071-4f09-252a-0080b95ed5ee/pr_source.lsr/200x200bb.png"/>
+    moviesData.map(infoObj => {
+      return <MovieTitle key={infoObj.id} title={infoObj.name} imgSrc={infoObj.artworkUrl100}/>
+    })
   );
 }
 

@@ -1,32 +1,78 @@
 .App {
   text-align: center;
+  font-family: 'Dosis', sans-serif;
+  color: #222A12;
+  background-color: #FFA500;
+  
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  align-items: flex-end;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
+/* Text */
+
+header {
+  padding-top: 1em;
+}
+
+.about-react {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+a {
+  text-decoration: none;
+}
+
+footer {
+  background: #222A12;
+  color:  #FFA500;
+  padding: 1em;
+}
+
+/* Heart animation */
+
+@keyframes beat {
   to {
-    transform: rotate(360deg);
-  }
+     -webkit-transform: scale(1.4);
+      -moz-transform: scale(1.4);
+      -o-transform: scale(1.4);
+      -ms-transform: scale(1.4);
+      transform: scale(1.4);
+  } 
+ }
+
+.heart {
+  display: inline-block;
+	font-size: 100px;
+	color: #e00;
+  animation: beat 1s infinite;
+	transform-origin: center;
+}
+
+/* Text crossding animation */
+
+@keyframes strike{
+  0%   { width : 0; }
+  100% { width: 100%; }
+}
+.strike {
+  position: relative;
+}
+.strike:after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background:  #222A12;
+  animation-name: strike;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; 
 }
