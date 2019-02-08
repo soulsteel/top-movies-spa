@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 
 import MovieTitle from "./MovieTitle";
 import Loader from "./Loader";
+import Pagination from "./Pagination";
+
+import "./MovieList.css";
 
 function MovieList() {
 
@@ -18,10 +21,17 @@ function MovieList() {
     return <Loader />
   }
 
+  let movieList = moviesData.map(infoObj => {
+    return <MovieTitle key={infoObj.id} title={infoObj.name} imgSrc={infoObj.artworkUrl100}/>
+  });
+
   return (
-    moviesData.map(infoObj => {
-      return <MovieTitle key={infoObj.id} title={infoObj.name} imgSrc={infoObj.artworkUrl100}/>
-    })
+    <main>
+      <div className="container">
+        {movieList}
+      </div>  
+      <Pagination />
+    </main>  
   );
 }
 

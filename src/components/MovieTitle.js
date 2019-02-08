@@ -16,9 +16,16 @@ function MovieTitle(props) {
   }
 
   return (
-    <div className="movie-title">
-      {splitTitle(props.title)}
-      <img src={props.imgSrc} alt={props.title} />
+    <div className="flip-container movie-title" onTouchStart="this.classList.toggle('hover');">
+      <div className="flipper">
+        <div className="front">
+          {splitTitle(props.title)}
+          <img src={props.imgSrc} alt={props.title} />
+        </div>
+        <div className="back">
+          <p>Flipper</p>
+        </div>
+      </div>
     </div>
   )
 }

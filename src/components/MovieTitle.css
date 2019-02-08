@@ -3,28 +3,45 @@
   padding: 10px 10px;
   font-size: 1.2em;
   border: solid 1px #222A12;
+  border-radius: 5px;
 }
 
-.movie-title:hover .flipper {
-		-webkit-transform: rotateY(180deg);
-		-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-  }
-  
+/* Flip animation */
+.flip-container {
+  perspective: 1000px;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotatyY(180deg);
+}
+
+.flip-container, .front, .back {
+  margin: 20px 20px;
+  padding: 10px 10px;
+  font-size: 1.2em;
+  border: solid 1px #222A12;
+  border-radius: 5px;
+  width: 200px;
+  height: 300px;
+}
+
 .flipper {
-  -webkit-transition: 0.6s;
-  -webkit-transform-style: preserve-3d;
-
-  -moz-transition: 0.6s;
-  -moz-transform-style: preserve-3d;
-  
-  -o-transition: 0.6s;
-  -o-transform-style: preserve-3d;
-
   transition: 0.6s;
   transform-style: preserve-3d;
-
   position: relative;
 }
-  
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+

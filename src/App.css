@@ -19,18 +19,26 @@ header {
   padding-top: 1em;
 }
 
-.about-react {
-  color: #61dafb;
+.about-react a {
+  color: #222A12;
 }
 
 a {
   text-decoration: none;
 }
 
+.about-react a:hover {
+  color: #00FFFF;
+}
+
 footer {
   background: #222A12;
   color:  #FFA500;
   padding: 1em;
+}
+
+h1, h2 {
+  margin: 10px 10px;
 }
 
 /* Heart animation */
@@ -47,7 +55,7 @@ footer {
 
 .heart {
   display: inline-block;
-	font-size: 100px;
+	font-size: 50px;
 	color: #e00;
   animation: beat 1s infinite;
 	transform-origin: center;

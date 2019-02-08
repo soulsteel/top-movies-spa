@@ -1,0 +1,13 @@
+.pagination a {
+  margin: 10px 2em;
+  font-size: 1.6em;
+  color: #222A12;
+}
+
+.pagination a:hover {
+  color: #61dafb;
+}
+
+.pagination {
+  margin: 10px 10px;
+}
