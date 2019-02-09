@@ -1,5 +1,5 @@
 .pagination a {
-  margin: 10px 2em;
+  margin-right: 10px;
   font-size: 1.6em;
   color: #222A12;
 }
@@ -10,4 +10,8 @@
 
 .pagination {
   margin: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }

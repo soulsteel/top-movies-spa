@@ -15,17 +15,18 @@ function MovieTitle(props) {
     return <p>{title}</p>;
   }
 
+  function handleClick(e) {
+    window.localStorage.setItem("movie", "Name")
+    console.log(window.localStorage);
+  }
+
   return (
-    <div className="flip-container movie-title" onTouchStart="this.classList.toggle('hover');">
-      <div className="flipper">
-        <div className="front">
-          {splitTitle(props.title)}
-          <img src={props.imgSrc} alt={props.title} />
-        </div>
-        <div className="back">
-          <p>Flipper</p>
-        </div>
-      </div>
+    <div className="movie-title">
+      {splitTitle(props.title)}
+      <img src={props.imgSrc} alt={props.title} />
+      <button title="Add to favorites" 
+              className="movie-title--button" 
+              onClick={handleClick}>+</button>
     </div>
   )
 }

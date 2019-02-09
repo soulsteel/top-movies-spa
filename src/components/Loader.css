@@ -1,7 +1,5 @@
 .loader {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  margin: 50px auto;
   border: 16px solid #F4A460;
   border-radius: 50%;
   border-top: 16px solid #222A12;
