@@ -2,6 +2,8 @@ import React from "react";
 
 import "./MovieTitle.css";
 
+const favorites = [];
+
 function MovieTitle(props) {
  
   function splitTitle(title) {
@@ -16,8 +18,10 @@ function MovieTitle(props) {
   }
 
   function handleClick(e) {
-    window.localStorage.setItem("movie", "Name")
-    console.log(window.localStorage);
+    let storage =  window.localStorage;
+    storage.setItem(props.id, props.title);
+    favorites.push(storage.getItem(props.id));
+    //console.log(window.localStorage);
   }
 
   return (
@@ -30,5 +34,9 @@ function MovieTitle(props) {
     </div>
   )
 }
+
+export const FavoriteMoviesContext = React.createContext(
+  window.localStorage
+);
 
 export default MovieTitle;

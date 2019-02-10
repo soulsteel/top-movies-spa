@@ -1,0 +1,43 @@
+.Favorite-Movies-Panel {
+  position: fixed;
+  top: 0;
+  margin: 0 auto; 
+  left: 0;
+  right: 0;
+  background-color: #222A12;
+  color: #FFA500;
+  max-width: 30em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.Favorite-Movies-Panel ul li {
+  text-decoration: none;
+}
+
+.Favorite-Movies-Panel h3 {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.Favorites-Button {
+  display: inline-block;
+  background-color: #FFA500;
+  color: #222A12;
+  border-style: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.List-button {
+  margin-left: 1em;
+  font-size: .8em;
+  font-weight: bold;
+}

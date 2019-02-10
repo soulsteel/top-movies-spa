@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import MovieTitle from "./MovieTitle";
 import Loader from "./Loader";
 import Pagination from "./Pagination";
+import FavoriteMovies from "./FavoriteMovies";
 
 import "./MovieList.css";
 
@@ -22,7 +23,11 @@ function MovieList() {
   }
 
   let movieList = moviesData.map(infoObj => {
-    return <MovieTitle key={infoObj.id} title={infoObj.name} imgSrc={infoObj.artworkUrl100}/>
+    return <MovieTitle 
+              key={infoObj.id} 
+              title={infoObj.name} 
+              imgSrc={infoObj.artworkUrl100}
+              id={infoObj.id} />
   });
 
   return (
@@ -31,6 +36,7 @@ function MovieList() {
         {movieList}
       </div>  
       <Pagination />
+      <FavoriteMovies />
     </main>  
   );
 }
