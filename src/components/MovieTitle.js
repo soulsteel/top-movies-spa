@@ -21,7 +21,6 @@ function MovieTitle(props) {
     let storage =  window.localStorage;
     storage.setItem(props.id, props.title);
     favorites.push(storage.getItem(props.id));
-    //console.log(window.localStorage);
   }
 
   return (
