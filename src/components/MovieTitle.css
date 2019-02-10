@@ -11,6 +11,9 @@
 }
 
 .movie-title--button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   display: none;
   cursor: pointer;
   background-color: #222A12;
@@ -34,4 +37,5 @@
 .movie-title:hover .movie-title--button {
   display: block;
   filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }
