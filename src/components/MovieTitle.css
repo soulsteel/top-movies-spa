@@ -18,10 +18,13 @@
   font-size: 40px;
   color: #FFA500;
   border-radius: 5px;
+  width: 60px;
+  text-align: center;
+  margin: 0 auto;
   position: absolute;
   top: 50%;
-  left: 38%;
-  width: 60px;
+  left: 0;
+  right: 0;
 }
 
 .movie-title:hover img {

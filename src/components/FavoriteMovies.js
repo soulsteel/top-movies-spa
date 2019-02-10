@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import "./FavoriteMovies.css";
 
@@ -11,6 +11,8 @@ function FavoriteMovies() {
   let [favoriteMovieList, setFavoriteMovieList] = useState({});
   
   let storage = window.localStorage;
+
+  let favMovieList = useContext(FavoriteMoviesContext);
   
   useEffect( function updateMovieList() {
     setFavoriteMovieList(storage);
@@ -28,7 +30,7 @@ function FavoriteMovies() {
     //console.log(e.target.parentNode);
   }
 
-  let list = Object.entries(FavoriteMoviesContext).map((pair) => {
+  let list = Object.entries(favoriteMovieList).map((pair) => {
     return <li key={pair[0]}>
               {favoriteMovieList.getItem(pair[0])}
               <button
@@ -43,7 +45,7 @@ function FavoriteMovies() {
 
   return (
     <div className="Favorite-Movies-Panel">
-      <h3>Your favorite movies are here</h3>
+      <h3>Your favorite movies are here &#8595;</h3>
       <button className="Favorites-Button" onClick={handleVisibility}>{buttonText}</button>
       {!invisibility && <ul>{list}</ul> }
 
